@@ -1,0 +1,311 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header */
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.app-header p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+/* Todo form */
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 13px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+}
+
+.todo-form input:focus {
+  border-color: #2563eb;
+}
+
+.add-button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background: #1d4ed8;
+}
+
+/* Search */
+
+.search-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  margin-bottom: 15px;
+}
+
+.search-input:focus {
+  border-color: #2563eb;
+}
+
+/* Filters */
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-button {
+  padding: 8px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: white;
+  color: #374151;
+}
+
+.filter-button:hover {
+  background: #f3f4f6;
+}
+
+.clear-button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 7px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.clear-button:hover {
+  background: #fecaca;
+}
+
+/* Stats */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.stat-card span {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* Todo list */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Todo item */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.todo-item:hover {
+  border-color: #cbd5e1;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+}
+
+.todo-title {
+  flex: 1;
+  word-break: break-word;
+}
+
+.todo-title.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 7px 11px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background: white;
+}
+
+.edit-button:hover {
+  background: #f3f4f6;
+}
+
+.delete-button {
+  color: #dc2626;
+}
+
+.delete-button:hover {
+  background: #fee2e2;
+}
+
+/* Edit mode */
+
+.edit-input {
+  flex: 1;
+  padding: 9px 11px;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  outline: none;
+}
+
+.save-button {
+  padding: 7px 11px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+}
+
+.cancel-button {
+  padding: 7px 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+}
+
+/* Empty state */
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+  background: white;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .app {
+    padding: 25px 15px;
+  }
+
+  .app-header h1 {
+    font-size: 30px;
+  }
+
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters {
+    justify-content: center;
+  }
+
+  .clear-button {
+    width: 100%;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 12px 5px;
+  }
+
+  .todo-item {
+    align-items: flex-start;
+  }
+
+  .todo-actions {
+    flex-direction: column;
+  }
+}
